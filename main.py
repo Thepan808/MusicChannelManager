@@ -26,7 +26,7 @@ class Audio:
         new_file = self.bot.get_file(file_id)
 
         logging.log(logging.INFO, "Downloading file")
-        self.bot.edit_message_caption(chat_id=self.chat_id, message_id=self.message_id, caption="downloading...")
+        self.bot.edit_message_caption(chat_id=self.chat_id, message_id=self.message_id, caption="Legendando...")
 
         new_file.download('file.mp3')
         logging.log(logging.INFO, "File downloaded")
@@ -55,10 +55,10 @@ class Audio:
         except:
             pass
 
-        new_caption = '''✏️ Title: {0}
-👤 Artist: {1}
-💽 Album:  {2}
-🎼 Genre: {3}'''.format(title, artist, album, genre)
+        new_caption = '''✏️ Título: {0}
+👤 Artista: {1}
+💽 Álbum:  {2}
+🎼 Gênero: {3}'''.format(title, artist, album, genre)
 
         self.bot.edit_message_caption(chat_id=self.chat_id, message_id=self.message_id, caption=new_caption)
         logging.log(logging.INFO, "Caption changed")
@@ -79,7 +79,7 @@ def start(bot, update):
 
 
 handler = MessageHandler(Filters.audio, change_caption, channel_post_updates=True, message_updates=False)
-handlers = CommandHandler('start', start)
+handlers = CommandHandler('zzz', start)
 dispatcher.add_handler(handler=handler)
 dispatcher.add_handler(handler=handlers)
 
